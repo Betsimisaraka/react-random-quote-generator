@@ -1,38 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { QUOTES } from './QuotesRandom';
+import { useParams, Link } from 'react-router-dom';
+import { SVG } from './QuotesRandom'
 
-function QuotesList({ quotes }) {
-    const [author, setAuthor] = useState({});
+const URL_API = "https://quote-garden.herokuapp.com/api/v2/authors/";
+const PAGE = "?page=1&limit=10";
+
+function QuotesList() {
+    const [author, setAuthor] = useState([]);
+    const { authorName } = useParams();
 
     async function fetchAuthor() {
-        const AUTHOR = `authors/:${quotes.quoteAuthor}?page=1&limit=10`;
-        console.log(AUTHOR);
         try {
-            const response = await fetch(QUOTES + AUTHOR);
+            const response = await fetch(URL_API + authorName + PAGE);
             console.log(response);
             const data = await response.json();
-            console.log(data);
-            setAuthor(data);
-        } catch(err) {
+            console.log(data.quotes);
+            setAuthor(data.quotes);
+        } catch (err) {
             console.log(err);
         }
     }
 
     useEffect(() => {
         fetchAuthor();
-        return () => {};
-    }, [quotes]);
+    }, []);
 
     return (
-        <div>
-            <h3>{author.message}</h3>
-            {/* <ul>
-               {author.quotes.map(quote => (
-                   <li>{quote.id}</li>
-               ))}
-            </ul> */}
-            <p>{author.totalPages}</p>
-        </div>
+        <>
+            <Link to="/">
+                <button className="next">
+                    random {SVG}
+                </button>
+            </Link>
+            <div className="list_container">
+                <p className="name">{authorName}</p>
+                <ul>
+                    {author.map(quote =>
+                        <li key={quote.id}>
+                            <p className="text">"{quote.quoteText}"</p>
+                        </li>
+                    )}
+                </ul>
+            </div>
+        </>
     )
 }
 

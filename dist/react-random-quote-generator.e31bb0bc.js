@@ -33853,72 +33853,36 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"QuotesList.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"QuotesRandom.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _QuotesRandom = require("./QuotesRandom");
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function QuotesList({
-  quotes
-}) {
-  const [author, setAuthor] = (0, _react.useState)({});
-
-  async function fetchAuthor() {
-    const AUTHOR = `authors/:${quotes.quoteAuthor}?page=1&limit=10`;
-    console.log(AUTHOR);
-
-    try {
-      const response = await fetch(_QuotesRandom.QUOTES + AUTHOR);
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-      setAuthor(data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  (0, _react.useEffect)(() => {
-    fetchAuthor();
-    return () => {};
-  }, [quotes]);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, author.message), /*#__PURE__*/_react.default.createElement("p", null, author.totalPages));
-}
-
-var _default = QuotesList;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","./QuotesRandom":"QuotesRandom.js"}],"QuotesRandom.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.QUOTES = void 0;
+exports.default = exports.QUOTES = exports.SVG = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _QuotesList = _interopRequireDefault(require("./QuotesList"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-const ALL_QUOTES = "quotes?page=1&limit=10";
+const SVG = /*#__PURE__*/_react.default.createElement("svg", {
+  class: "w-6 h-6",
+  fill: "none",
+  stroke: "currentColor",
+  viewBox: "0 0 24 24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /*#__PURE__*/_react.default.createElement("path", {
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  "stroke-width": "2",
+  d: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+}));
+
+exports.SVG = SVG;
 const QUOTES = "https://quote-garden.herokuapp.com/api/v2/";
 exports.QUOTES = QUOTES;
 
@@ -33940,7 +33904,10 @@ function QuotesRandom() {
   (0, _react.useEffect)(() => {
     fetchQuotes();
   }, []);
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: fetchQuotes,
+    className: "next"
+  }, "random ", SVG), /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "header"
@@ -33952,17 +33919,77 @@ function QuotesRandom() {
     className: "quoteAuothor"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "author_genre"
-  }, /*#__PURE__*/_react.default.createElement("p", null, quotes.quoteAuthor), /*#__PURE__*/_react.default.createElement("p", null, quotes.quoteGenre, " ")), /*#__PURE__*/_react.default.createElement("p", {
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "author"
+  }, quotes.quoteAuthor), /*#__PURE__*/_react.default.createElement("p", {
+    className: "genre"
+  }, quotes.quoteGenre, " ")), /*#__PURE__*/_react.default.createElement("p", {
     className: "arrow"
-  }, " \u27A1 ")))), /*#__PURE__*/_react.default.createElement("button", {
-    onClick: fetchQuotes,
-    className: "next"
-  }, "randome \uD83D\uDD04"));
+  }, " \u27A1 "))))));
 }
 
 var _default = QuotesRandom;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./QuotesList":"QuotesList.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesList.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _QuotesRandom = require("./QuotesRandom");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const URL_API = "https://quote-garden.herokuapp.com/api/v2/authors/";
+const PAGE = "?page=1&limit=10";
+
+function QuotesList() {
+  const [author, setAuthor] = (0, _react.useState)([]);
+  const {
+    authorName
+  } = (0, _reactRouterDom.useParams)();
+
+  async function fetchAuthor() {
+    try {
+      const response = await fetch(URL_API + authorName + PAGE);
+      console.log(response);
+      const data = await response.json();
+      console.log(data.quotes);
+      setAuthor(data.quotes);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  (0, _react.useEffect)(() => {
+    fetchAuthor();
+  }, []);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "next"
+  }, "random ", _QuotesRandom.SVG)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "list_container"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "name"
+  }, authorName), /*#__PURE__*/_react.default.createElement("ul", null, author.map(quote => /*#__PURE__*/_react.default.createElement("li", {
+    key: quote.id
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "text"
+  }, "\"", quote.quoteText, "\""))))));
+}
+
+var _default = QuotesList;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./QuotesRandom":"QuotesRandom.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33982,7 +34009,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/author/:quoteAuthor"
+    path: "/author/:authorName"
   }, /*#__PURE__*/_react.default.createElement(_QuotesList.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_QuotesRandom.default, null)))));
@@ -34030,7 +34057,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49655" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56951" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

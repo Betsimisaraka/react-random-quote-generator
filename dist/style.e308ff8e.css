@@ -1,3 +1,9 @@
+body {
+    background: #fec7d7;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     position: relative;
 }
@@ -9,8 +15,34 @@
 }
 
 .quotes {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-left: 99px;
+    color: #0e172c;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 120%;
+    border-left: 8px solid #F7DF;
+}
+
+.author {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #F2F2F2;
+}
+
+.genre {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #828282;
 }
 
 button {
@@ -24,7 +56,8 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .author_genre, .arrow {
@@ -38,8 +71,91 @@ button {
 
 .next {
     position: absolute;
-    top: 0%;
-    right: 0%;
+    top: 5%;
+    right: 5%;
+    z-index: 1;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: #333333;
+    border: none;
+    background: transparent;
+}
+
+.next svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-top: 1rem;
+}
+
+.list_container {
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    background-color: #00473e;
+}
+
+.name {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #fffffe;
+}
+
+.text {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 120%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    background-color: #f2f7f5;
+    color: #475d5b;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+ul li + li {
+    margin-top: 20px;
+}
+
+@media (min-width: 378px) {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    ul li + li {
+        margin-top: 0px;
+    }
+}
+
+@media (min-width: 780px) {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    ul li + li {
+        margin-top: 0px;
+    }
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

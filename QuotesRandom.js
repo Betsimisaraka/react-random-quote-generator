@@ -1,51 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import QuotesList from './QuotesList';
 
-const ALL_QUOTES = "https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10";
+const ALL_QUOTES = "quotes?page=1&limit=10";
+export const QUOTES = "https://quote-garden.herokuapp.com/api/v2/";
 
 function QuotesRandom() {
     const [quotes, setQuotes] = useState([]);
-    const [author, setAuthor] = useState('');
+
+    const API_QUOTES = "quotes/random";
 
     const fetchQuotes = async () => {
-        const API_QUOTES = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
         try {
-            const res = await fetch(API_QUOTES);
+            const res = await fetch(QUOTES + API_QUOTES);
             const data = await res.json();
             console.log(data.quote);
             setQuotes(data.quote);
-        } catch(err) {
-            console.log(err);
-        }
-    }
-    const AUTHOR = `https://quote-garden.herokuapp.com/api/v2/authors/:${quotes.quoteAuthor}?page=1&limit=10`;
-    console.log(AUTHOR);
-
-    async function fetchAuthor() {
-        try {
-            const response = await fetch(API_QUOTES);
-            console.log(response);
-            const data = await response.json();
-            console.log(data);
-            setAuthor(data);
-        } catch(err) {
+        } catch (err) {
             console.log(err);
         }
     }
 
     useEffect(() => {
         fetchQuotes();
-        fetchAuthor();
-    }, []);
+    }, [])
 
     return (
-        <div>
-           <h2>"{quotes.quoteText}"</h2>
-            <button>
-                <Link to={`/quote/${quotes.id}`}>
-                    <p>{quotes.quoteAuthor}</p>
-                    <p>{quotes.quoteGenre}</p>
+        <div className="container">
+            <div className="header">
+                <h2 className="quotes">"{quotes.quoteText}"</h2>
+                <Link to={`/author/${quotes.quoteAuthor}`}>
+                    <button className="quoteAuothor">
+                        <div className="author_genre">
+                            <p>{quotes.quoteAuthor}</p>
+                            <p>{quotes.quoteGenre} </p>
+                        </div>
+                        <p className="arrow"> ➡ </p>
+                    </button>
                 </Link>
+            </div>
+            <button onClick={fetchQuotes} className="next">
+                randome 🔄
             </button>
         </div>
     )

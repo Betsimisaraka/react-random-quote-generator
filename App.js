@@ -8,7 +8,7 @@ function App() {
         <div>
             <Router>
                 <Switch>
-                    <Route path="/quote/:id">
+                    <Route path="/author/:quoteAuthor">
                         <QuotesList />
                     </Route>
                     <Route path="/">

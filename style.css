@@ -1,5 +1,4 @@
 body {
-    background: #fec7d7;
     margin: 0;
     padding: 0;
 }
@@ -24,7 +23,7 @@ body {
     font-weight: 500;
     font-size: 36px;
     line-height: 120%;
-    border-left: 8px solid #F7DF;
+    border-left: 8px solid #F7DF94;
 }
 
 .author {
@@ -81,7 +80,7 @@ button {
     line-height: 120%;
     color: black;
     border: none;
-    background: #f9bc60;
+    background: transparent;
     background-image: url('./assets/refresh.svg');
     background-repeat: no-repeat;
     background-size: 2rem;
@@ -103,16 +102,17 @@ button {
     padding-left: 50px;
     padding-bottom: 50px;
     padding-right: 50px;
-    background-color: #00473e;
 }
 
 .name {
     font-family: Raleway;
+    margin: 0;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
     line-height: 42px;
-    color: #fffffe;
+    padding-bottom: 100px;
+    padding-top: 48px;
 }
 
 .text {
@@ -128,38 +128,20 @@ ul {
     padding: 0;
 }
 
+ul li p {
+    margin: 0;
+    padding: 0;
+}
+
 ul li {
     list-style: none;
-    background-color: #f2f7f5;
-    color: #475d5b;
-    padding: 2rem;
-    border-radius: 5px;
+    padding-left: 99px;
+    border-left: 8px solid #F7DF94;
+    margin: 0;
+
 }
 
 ul li + li {
-    margin-top: 20px;
+    margin-top: 100px;
 }
 
-@media (min-width: 378px) {
-    ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 20px;
-        row-gap: 20px;
-    }
-    ul li + li {
-        margin-top: 0px;
-    }
-}
-
-@media (min-width: 780px) {
-    ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 20px;
-        row-gap: 20px;
-    }
-    ul li + li {
-        margin-top: 0px;
-    }
-}

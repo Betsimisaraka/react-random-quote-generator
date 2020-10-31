@@ -67,7 +67,7 @@ Just click the link in the demo above and you will see the finished project.
 
 -   What was your experience?
 
-My experience was building the quote by react router dom that we just have learned that a few weeks ago.
+My experience was building the quote by react router dom that we just have learned that a few weeks ago. In this project I still have an error in the console. It is about the key in every child element but I couldn't solve this error.
 
 -   What have you learned/improved?
     -  I have learned how to use switch and route in react.

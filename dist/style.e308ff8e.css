@@ -77,11 +77,17 @@ button {
     font-family: Raleway;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 36px;
     line-height: 120%;
-    color: #333333;
+    color: black;
     border: none;
-    background: transparent;
+    background: #f9bc60;
+    background-image: url('/refresh.35079f67.svg');
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 100% 50%;
+    padding-right: 3rem;
+    border-radius: 5px;
 }
 
 .next svg {

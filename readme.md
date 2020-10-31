@@ -63,11 +63,14 @@ Template for your readme :
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 -   Where can I see your demo?
+Just click the link in the demo above and you will see the finished project.
+
 -   What was your experience?
+
 My experience was building the quote by react router dom that we just have learned that a few weeks ago.
 
 -   What have you learned/improved?
-    -  I have learned how can I use switch and route in react.
+    -  I have learned how to use switch and route in react.
     -  And also I learned to use useParams with this exercise. 
 
 -   Your wisdom? :)

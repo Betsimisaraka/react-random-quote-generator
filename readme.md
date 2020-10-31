@@ -26,15 +26,15 @@ Template for your readme :
 
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">{React Random Quote Generator}</h1>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://github.com/Betsimisaraka/react-random-quote-generator">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href=" https://react-random-quote-generator-router.netlify.app/">
       Solution
     </a>
   </h3>
@@ -55,13 +55,21 @@ Template for your readme :
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](./assets/first-page.png)
+
+![screenshot](./assets/second-page.png)
+
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 -   Where can I see your demo?
 -   What was your experience?
+My experience was building the quote by react router dom that we just have learned that a few weeks ago.
+
 -   What have you learned/improved?
+    -  I have learned how can I use switch and route in react.
+    -  And also I learned to use useParams with this exercise. 
+
 -   Your wisdom? :)
 
 ### Built With
@@ -82,13 +90,13 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/Betsimisaraka/react-random-quote
 
 # Install dependencies
-$ npm install
+$ npm install react react-dom react-router-dom
 
 # Run the app
-$ npm start
+$ npm start or parcel index.html
 ```
 
 ## Acknowledgements
@@ -98,5 +106,5 @@ $ npm start
 ## Contact
 
 -   Website [your-website.com](https://{your-web-site-link})
--   GitHub [@your-username](https://{github.com/your-usermame})
+-   GitHub [@your-username](https://{github.com/Betsimisaraka})
 -   Twitter [@your-twitter](https://{twitter.com/your-username})
